@@ -1,0 +1,4 @@
+https://www.marcelohenrique.net.br/artigo/crud-android-com-sqlite
+http://docwiki.embarcadero.com/RADStudio/Tokyo/en/Mobile_Tutorial:_Using_FireDAC_and_SQLite_(iOS_and_Android)
+https://www.devmedia.com.br/conectando-bases-de-dados-no-android-ios-e-windows-pelo-delphi/36901
+http://www.activedelphi.com.br/forum/viewtopic.php?p=470991&sid=2617e76d63ba03ac2bedf1a0219be2df
