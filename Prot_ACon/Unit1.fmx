@@ -1,0 +1,298 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'HeaderFooter'
+  ClientHeight = 560
+  ClientWidth = 380
+  FormFactor.Width = 1440
+  FormFactor.Height = 900
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 0
+  object TopToolBar: TToolBar
+    Anchors = []
+    Size.Width = 380.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object ToolBarLabel: TLabel
+      Action = TitleAction
+      Align = Contents
+      Enabled = True
+      Size.Width = 380.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'toollabel'
+      TextSettings.HorzAlign = Center
+      Text = 'ACon - Pagina inicial'
+    end
+    object btnBack: TSpeedButton
+      Action = PreviousTabAction1
+      Align = MostLeft
+      Enabled = True
+      ImageIndex = -1
+      Size.Width = 65.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'backtoolbutton'
+    end
+    object btnNext: TSpeedButton
+      Action = NextTabAction1
+      Align = MostRight
+      Enabled = True
+      ImageIndex = -1
+      Position.X = 336.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'nexttoolbutton'
+    end
+  end
+  object TabControl1: TTabControl
+    Align = Client
+    FullSize = True
+    Size.Width = 380.000000000000000000
+    Size.Height = 472.000000000000000000
+    Size.PlatformDefault = False
+    TabHeight = 49.000000000000000000
+    TabIndex = 2
+    TabOrder = 1
+    TabPosition = None
+    OnChange = TabControl1Change
+    Sizes = (
+      380s
+      472s
+      380s
+      472s
+      380s
+      472s)
+    object tab1: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Caption Tab Item #1'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object lv1: TListView
+        ItemAppearanceClassName = 'TListItemRightDetailAppearance'
+        ItemEditAppearanceClassName = 'TListItemRightDetailShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Client
+        Size.Width = 380.000000000000000000
+        Size.Height = 472.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        ItemAppearanceObjects.ItemObjects.Text.WordWrap = True
+        ItemAppearanceObjects.ItemObjects.Text.Width = 247.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.Height = 44.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Detail.WordWrap = True
+        ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.HeaderObjects.Text.TextAlign = Center
+        ItemAppearanceObjects.FooterObjects.Text.Width = 347.000000000000000000
+        ItemAppearanceObjects.FooterObjects.Text.Height = 56.000000000000000000
+        OnItemClickEx = lv1ItemClickEx
+        SearchVisible = True
+      end
+    end
+    object tab2: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = False
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'Caption Tab Item #2'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+    end
+    object tab3: TTabItem
+      CustomIcon = <
+        item
+        end>
+      IsSelected = True
+      Size.Width = 8.000000000000000000
+      Size.Height = 8.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = ''
+      TabOrder = 0
+      Text = 'tab3'
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      object pnl1: TPanel
+        Align = Client
+        Size.Width = 380.000000000000000000
+        Size.Height = 104.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object lblEscola: TLabel
+          Align = Top
+          AutoSize = True
+          StyledSettings = [Family, FontColor]
+          Size.Width = 380.000000000000000000
+          Size.Height = 38.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.Size = 14.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          TextSettings.HorzAlign = Center
+          Text = 'EE CONEGO ROCHAEL DE MEDEIROS - PR'#201'DIO: PRINCIPAL'
+          TabOrder = 0
+        end
+        object lbl2: TLabel
+          AutoSize = True
+          StyledSettings = [Family, Size, FontColor]
+          Locked = True
+          Position.X = 8.000000000000000000
+          Position.Y = 40.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Respons'#225'vel:'
+          TabOrder = 1
+        end
+        object lbl3: TLabel
+          AutoSize = True
+          StyledSettings = [Family, Size, FontColor]
+          Locked = True
+          Position.X = 8.000000000000000000
+          Position.Y = 60.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Telefone:'
+          TabOrder = 2
+        end
+        object lbl4: TLabel
+          AutoSize = True
+          StyledSettings = [Family, Size, FontColor]
+          Locked = True
+          Position.X = 8.000000000000000000
+          Position.Y = 80.000000000000000000
+          Size.Width = 137.000000000000000000
+          Size.Height = 16.000000000000000000
+          Size.PlatformDefault = False
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Quantidade de malotes:'
+          TabOrder = 3
+        end
+        object lblResp: TLabel
+          Locked = True
+          Position.X = 150.000000000000000000
+          Position.Y = 40.000000000000000000
+          Text = 'Raoni Miranda Neves'
+          TabOrder = 4
+        end
+        object lblFone: TLabel
+          Locked = True
+          Position.X = 150.000000000000000000
+          Position.Y = 60.000000000000000000
+          Text = '(81) 99646-1711'
+          TabOrder = 5
+        end
+        object lblQtd: TLabel
+          Locked = True
+          Position.X = 150.000000000000000000
+          Position.Y = 80.000000000000000000
+          Text = '12'
+          TabOrder = 6
+        end
+      end
+      object lvDet: TListView
+        ItemAppearanceClassName = 'TListItemAppearance'
+        ItemEditAppearanceClassName = 'TListItemShowCheckAppearance'
+        HeaderAppearanceClassName = 'TListHeaderObjects'
+        FooterAppearanceClassName = 'TListHeaderObjects'
+        Align = Bottom
+        Position.Y = 104.000000000000000000
+        Size.Width = 380.000000000000000000
+        Size.Height = 368.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 1
+        ItemAppearance.ItemHeight = 20
+        ItemAppearanceObjects.ItemObjects.Text.Font.Size = 15.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.TextAlign = Center
+        ItemAppearanceObjects.ItemObjects.Text.Width = 306.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.Height = 25.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
+        ItemAppearanceObjects.HeaderObjects.Text.Font.Size = 20.000000000000000000
+        ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.HeaderObjects.Text.TextAlign = Center
+        ItemAppearanceObjects.FooterObjects.Text.Width = 343.000000000000000000
+        ItemAppearanceObjects.FooterObjects.Text.Height = 13.000000000000000000
+        ItemAppearanceObjects.FooterObjects.Text.Visible = False
+        ShowSelection = False
+      end
+    end
+  end
+  object BottomToolBar: TToolBar
+    Align = Bottom
+    Anchors = [akLeft]
+    Position.Y = 516.000000000000000000
+    Size.Width = 380.000000000000000000
+    Size.Height = 44.000000000000000000
+    Size.PlatformDefault = False
+    StyleLookup = 'bottomtoolbar'
+    TabOrder = 2
+    object btn1: TSpeedButton
+      Position.X = 160.000000000000000000
+      Position.Y = 8.000000000000000000
+      Size.Width = 73.000000000000000000
+      Size.Height = 22.000000000000000000
+      Size.PlatformDefault = False
+      StyleLookup = 'refreshtoolbutton'
+      Text = 'btn1'
+      OnClick = btn1Click
+    end
+  end
+  object ActionList1: TActionList
+    Left = 304
+    Top = 208
+    object TitleAction: TControlAction
+      Category = 'Tab'
+      Text = 'TitleAction'
+      OnUpdate = TitleActionUpdate
+    end
+    object PreviousTabAction1: TPreviousTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+      ShortCut = 137
+    end
+    object NextTabAction1: TNextTabAction
+      Category = 'Tab'
+      TabControl = TabControl1
+    end
+  end
+  object con1: TFDConnection
+    Params.Strings = (
+      'Database=D:\Delphi\ACon\BD_remoto.db'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 344
+    Top = 316
+  end
+  object fdsqlite1: TFDPhysSQLiteDriverLink
+    Left = 344
+    Top = 420
+  end
+  object fdwait1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 344
+    Top = 476
+  end
+  object fdqry1: TFDQuery
+    Connection = con1
+    Left = 344
+    Top = 372
+  end
+end

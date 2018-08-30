@@ -1,0 +1,86 @@
+inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
+  ClientHeight = 695
+  ClientWidth = 450
+  OnKeyUp = FormKeyUp
+  DesignerMasterStyle = 0
+  inherited TopToolBar: TToolBar
+    Size.Width = 450.000000000000000000
+    Size.Height = 48.000000000000000000
+    inherited ToolBarLabel: TLabel
+      Size.Width = 450.000000000000000000
+      Size.Height = 48.000000000000000000
+    end
+    inherited btnBack: TSpeedButton
+      Visible = False
+    end
+    inherited btnNext: TSpeedButton
+      Position.X = 402.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+    end
+  end
+  inherited TabControl1: TTabControl
+    Size.Width = 450.000000000000000000
+    Size.Height = 599.000000000000000000
+    Sizes = (
+      450s
+      599s
+      450s
+      599s
+      450s
+      599s)
+    inherited tab1: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited lv1: TListView
+        Size.Width = 450.000000000000000000
+        Size.Height = 599.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
+        ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
+        ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.FooterObjects.Text.PlaceOffset.Y = 8.000000000000000000
+      end
+    end
+    inherited tab2: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+    end
+    inherited tab3: TTabItem
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited pnl1: TPanel
+        Size.Width = 450.000000000000000000
+        Size.Height = 231.000000000000000000
+        inherited lblEscola: TLabel
+          Size.Width = 450.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited lbl2: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited lbl3: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited lbl4: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited lvDet: TListView
+        Position.Y = 231.000000000000000000
+        Size.Width = 450.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.HeaderObjects.Text.Visible = False
+      end
+    end
+  end
+  inherited BottomToolBar: TToolBar
+    Position.Y = 647.000000000000000000
+    Size.Width = 450.000000000000000000
+    Size.Height = 48.000000000000000000
+    inherited btn1: TSpeedButton
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
+    end
+  end
+end

@@ -1,0 +1,83 @@
+inherited Form1_iPhone4in: TForm1_iPhone4in
+  ClientHeight = 548
+  ClientWidth = 320
+  DesignerMasterStyle = 0
+  inherited TopToolBar: TToolBar
+    Size.Width = 320.000000000000000000
+    inherited ToolBarLabel: TLabel
+      Size.Width = 320.000000000000000000
+    end
+    inherited btnNext: TSpeedButton
+      Position.X = 276.000000000000000000
+    end
+  end
+  inherited TabControl1: TTabControl
+    Size.Width = 320.000000000000000000
+    Size.Height = 460.000000000000000000
+    Sizes = (
+      320s
+      460s
+      320s
+      460s
+      320s
+      460s)
+    inherited tab1: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited lv1: TListView
+        Size.Width = 320.000000000000000000
+        Size.Height = 460.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Accessory.AccessoryType = Checkmark
+        ItemAppearanceObjects.ItemObjects.Accessory.Visible = False
+        ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.FooterObjects.Text.PlaceOffset.Y = 8.000000000000000000
+      end
+    end
+    inherited tab2: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+    end
+    inherited tab3: TTabItem
+      Size.Width = 11.000000000000000000
+      Size.Height = 11.000000000000000000
+      ExplicitSize.cx = 8.000000000000000000
+      ExplicitSize.cy = 8.000000000000000000
+      inherited pnl1: TPanel
+        Size.Width = 320.000000000000000000
+        Size.Height = 92.000000000000000000
+        inherited lblEscola: TLabel
+          Size.Width = 320.000000000000000000
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited lbl2: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited lbl3: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+        inherited lbl4: TLabel
+          TextSettings.Font.StyleExt = {00070000000000000004000000}
+        end
+      end
+      inherited lvDet: TListView
+        Position.Y = 92.000000000000000000
+        Size.Width = 320.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
+        ItemAppearanceObjects.HeaderObjects.Text.Visible = False
+      end
+    end
+  end
+  inherited BottomToolBar: TToolBar
+    Position.Y = 504.000000000000000000
+    Size.Width = 320.000000000000000000
+    inherited btn1: TSpeedButton
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
+    end
+  end
+end
