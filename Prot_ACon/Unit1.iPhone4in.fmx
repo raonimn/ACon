@@ -4,11 +4,18 @@ inherited Form1_iPhone4in: TForm1_iPhone4in
   DesignerMasterStyle = 0
   inherited TopToolBar: TToolBar
     Size.Width = 320.000000000000000000
+    Size.Height = 44.000000000000000000
     inherited ToolBarLabel: TLabel
       Size.Width = 320.000000000000000000
+      Size.Height = 44.000000000000000000
+    end
+    inherited btnBack: TSpeedButton
+      Size.Height = 44.000000000000000000
     end
     inherited btnNext: TSpeedButton
       Position.X = 276.000000000000000000
+      Size.Width = 44.000000000000000000
+      Size.Height = 44.000000000000000000
     end
   end
   inherited TabControl1: TTabControl
@@ -40,6 +47,43 @@ inherited Form1_iPhone4in: TForm1_iPhone4in
       Size.Height = 11.000000000000000000
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
+      inherited pnl2: TPanel
+        Size.Width = 320.000000000000000000
+        Size.Height = 460.000000000000000000
+        inherited grpOpe: TGroupBox
+          Size.Width = 320.000000000000000000
+          inherited cbb1: TComboBox
+            Size.Height = 30.000000000000000000
+          end
+          inherited lbl1: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited lbl5: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited cbb2: TComboBox
+            Size.Height = 30.000000000000000000
+          end
+          inherited lbl6: TLabel
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited cbb3: TComboBox
+            Size.Height = 30.000000000000000000
+          end
+        end
+        inherited grpGPS: TGroupBox
+          Size.Width = 320.000000000000000000
+          inherited btnMin: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited btnMed: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited btnMax: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
     end
     inherited tab3: TTabItem
       Size.Width = 11.000000000000000000
@@ -48,7 +92,7 @@ inherited Form1_iPhone4in: TForm1_iPhone4in
       ExplicitSize.cy = 8.000000000000000000
       inherited pnl1: TPanel
         Size.Width = 320.000000000000000000
-        Size.Height = 92.000000000000000000
+        Size.Height = 100.000000000000000000
         inherited lblEscola: TLabel
           Size.Width = 320.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -64,7 +108,7 @@ inherited Form1_iPhone4in: TForm1_iPhone4in
         end
       end
       inherited lvDet: TListView
-        Position.Y = 92.000000000000000000
+        Position.Y = 100.000000000000000000
         Size.Width = 320.000000000000000000
         ItemAppearanceObjects.ItemObjects.Text.Font.StyleExt = {00070000000000000004000000}
         ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
@@ -75,6 +119,7 @@ inherited Form1_iPhone4in: TForm1_iPhone4in
   inherited BottomToolBar: TToolBar
     Position.Y = 504.000000000000000000
     Size.Width = 320.000000000000000000
+    Size.Height = 44.000000000000000000
     inherited btn1: TSpeedButton
       Size.Width = 44.000000000000000000
       Size.Height = 44.000000000000000000

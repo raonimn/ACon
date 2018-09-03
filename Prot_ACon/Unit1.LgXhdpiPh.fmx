@@ -5,23 +5,17 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
   DesignerMasterStyle = 0
   inherited TopToolBar: TToolBar
     Size.Width = 450.000000000000000000
-    Size.Height = 48.000000000000000000
     inherited ToolBarLabel: TLabel
       Size.Width = 450.000000000000000000
-      Size.Height = 48.000000000000000000
-    end
-    inherited btnBack: TSpeedButton
-      Visible = False
     end
     inherited btnNext: TSpeedButton
       Position.X = 402.000000000000000000
-      Size.Width = 48.000000000000000000
-      Size.Height = 48.000000000000000000
     end
   end
   inherited TabControl1: TTabControl
     Size.Width = 450.000000000000000000
     Size.Height = 599.000000000000000000
+    TabIndex = 0
     Sizes = (
       450s
       599s
@@ -30,6 +24,7 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
       450s
       599s)
     inherited tab1: TTabItem
+      IsSelected = True
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited lv1: TListView
@@ -44,30 +39,109 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
     inherited tab2: TTabItem
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
+      inherited pnl2: TPanel
+        Size.Width = 450.000000000000000000
+        Size.Height = 599.000000000000000000
+        inherited grpOpe: TGroupBox
+          Margins.Top = 5.000000000000000000
+          Position.Y = 102.000000000000000000
+          Size.Width = 450.000000000000000000
+          inherited cbb1: TComboBox
+            Position.X = 240.000000000000000000
+          end
+          inherited lbl1: TLabel
+            Size.Width = 161.000000000000000000
+            Size.Height = 22.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited lbl5: TLabel
+            Size.Width = 153.000000000000000000
+            Size.Height = 22.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited cbb2: TComboBox
+            Position.X = 240.000000000000000000
+            Size.Width = 121.000000000000000000
+          end
+          inherited lbl6: TLabel
+            Size.Width = 129.000000000000000000
+            Size.Height = 22.000000000000000000
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Centralizadora'
+          end
+          inherited cbb3: TComboBox
+            Position.X = 240.000000000000000000
+            Size.Width = 121.000000000000000000
+          end
+        end
+        inherited grpGPS: TGroupBox
+          Size.Width = 450.000000000000000000
+          Size.Height = 97.000000000000000000
+          inherited btnMin: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited btnMed: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          inherited btnMax: TSpeedButton
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
     end
     inherited tab3: TTabItem
+      IsSelected = False
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited pnl1: TPanel
         Size.Width = 450.000000000000000000
-        Size.Height = 231.000000000000000000
+        Size.Height = 152.000000000000000000
         inherited lblEscola: TLabel
+          Locked = False
+          Margins.Top = 5.000000000000000000
+          Position.Y = 5.000000000000000000
           Size.Width = 450.000000000000000000
+          Size.Height = 49.000000000000000000
+          TextSettings.Font.Size = 20.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
         end
         inherited lbl2: TLabel
+          Locked = False
+          Position.Y = 64.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
         end
         inherited lbl3: TLabel
+          Locked = False
+          Position.Y = 84.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
         end
         inherited lbl4: TLabel
+          Locked = False
+          Position.Y = 104.000000000000000000
+          Size.Width = 193.000000000000000000
+          Size.Height = 22.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
+          Text = 'Malotes:'
+        end
+        inherited lblResp: TLabel
+          AutoSize = True
+          Position.X = 134.000000000000000000
+          Position.Y = 64.000000000000000000
+          Size.Height = 22.000000000000000000
+        end
+        inherited lblFone: TLabel
+          Position.X = 134.000000000000000000
+          Position.Y = 84.000000000000000000
+        end
+        inherited lblQtd: TLabel
+          Position.X = 134.000000000000000000
+          Position.Y = 104.000000000000000000
         end
       end
       inherited lvDet: TListView
-        Position.Y = 231.000000000000000000
+        Position.Y = 152.000000000000000000
         Size.Width = 450.000000000000000000
+        Size.Height = 447.000000000000000000
         ItemAppearanceObjects.ItemObjects.Text.Font.StyleExt = {00070000000000000004000000}
         ItemAppearanceObjects.HeaderObjects.Text.Font.StyleExt = {00070000000000000004000000}
         ItemAppearanceObjects.HeaderObjects.Text.Visible = False
@@ -77,10 +151,68 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
   inherited BottomToolBar: TToolBar
     Position.Y = 647.000000000000000000
     Size.Width = 450.000000000000000000
-    Size.Height = 48.000000000000000000
-    inherited btn1: TSpeedButton
-      Size.Width = 48.000000000000000000
-      Size.Height = 48.000000000000000000
-    end
+  end
+  inherited con1: TFDConnection
+    BeforeConnect = con1BeforeConnect
+  end
+  inherited fdqry1: TFDQuery
+    SQL.Strings = (
+      ''
+      'CREATE TABLE IF NOT EXISTS "ENCCEJA_2018" ('
+      '  "Objeto" TEXT,'
+      '  "Data/Hora de postagem" TEXT,'
+      '  "Data Prevista" TEXT,'
+      '  "Data de Entrega" TEXT,'
+      '  "Objeto de retorno/ida" TEXT,'
+      '  "C'#243'd. Destinat'#225'rio" TEXT,'
+      '  "Destinat'#225'rio" TEXT,'
+      '  "Logradouro" TEXT,'
+      '  "Bairro" TEXT,'
+      '  "CEP" TEXT,'
+      '  "C'#243'd. Cidade" TEXT,'
+      '  "Cidade" TEXT,'
+      '  "UF" TEXT,'
+      '  "'#218'ltimo Status" TEXT,'
+      '  "SE" TEXT,'
+      '  "C'#243'd. Centralizadora" TEXT,'
+      '  "C'#243'd. Distribuidora" TEXT,'
+      '  "Distribuidora" TEXT,'
+      '  "Mala Postal" TEXT,'
+      '  "Tipo do unitizador" TEXT,'
+      '  "Sabadista (S/N)" TEXT,'
+      '  "Prova Especial (S/N)" TEXT,'
+      '  "Peso (em kg)" TEXT,'
+      '  "N'#250'm. unitizador previsto" TEXT,'
+      '  "Qtd. inscritos" TEXT,'
+      '  "Qtd. provas" TEXT,'
+      '  "Qtd. provas especiais" TEXT,'
+      '  "Lacre 1" TEXT,'
+      '  "Lacre 2" TEXT,'
+      '  "Organizadora" TEXT,'
+      '  "Arquivo" TEXT,'
+      '  "Data/Hora envio arq p/ grafica" TEXT'
+      ');'
+      ''
+      'CREATE TABLE IF NOT EXISTS "Geo_busca" ('
+      '  "GEO_ID" INTEGER(255) NOT NULL,'
+      '  "Destinatario" TEXT(100),'
+      '  "Centralizadora" TEXT(10),'
+      '  "Bairro" TEXT(100),'
+      '  "Cidade" TEXT(100),'
+      '  "SE" TEXT(3),'
+      '  "UF" TEXT(3),'
+      '  "Pesquisa" TEXT(140),'
+      '  "Latitude" TEXT(30),'
+      '  "Longitude" TEXT(30),'
+      '  PRIMARY KEY ("GEO_ID")'
+      ');'
+      ''
+      'CREATE TABLE IF NOT EXISTS "Objetos" ('
+      '  "Objeto" TEXT(13) NOT NULL,'
+      '  "Data" TEXT(10),'
+      '  "GEO_ID" INTEGER(255),'
+      '  PRIMARY KEY ("Objeto")'
+      ');'
+      '')
   end
 end

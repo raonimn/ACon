@@ -49,6 +49,9 @@
 *.cfg
 *.hpp
 *Resource.rc
+Android/
+Win32/
+Win64/
 
 # Delphi local files (user-specific info)
 *.local

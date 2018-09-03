@@ -8,19 +8,17 @@ object Form1: TForm1
   FormFactor.Height = 900
   FormFactor.Devices = [Desktop]
   OnCreate = FormCreate
-  DesignerMasterStyle = 0
+  DesignerMasterStyle = 3
   object TopToolBar: TToolBar
     Anchors = []
     Size.Width = 380.000000000000000000
-    Size.Height = 44.000000000000000000
+    Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
     TabOrder = 0
     object ToolBarLabel: TLabel
-      Action = TitleAction
       Align = Contents
-      Enabled = True
       Size.Width = 380.000000000000000000
-      Size.Height = 44.000000000000000000
+      Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'toollabel'
       TextSettings.HorzAlign = Center
@@ -31,8 +29,8 @@ object Form1: TForm1
       Align = MostLeft
       Enabled = True
       ImageIndex = -1
-      Size.Width = 65.000000000000000000
-      Size.Height = 44.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'backtoolbutton'
     end
@@ -41,9 +39,9 @@ object Form1: TForm1
       Align = MostRight
       Enabled = True
       ImageIndex = -1
-      Position.X = 336.000000000000000000
-      Size.Width = 44.000000000000000000
-      Size.Height = 44.000000000000000000
+      Position.X = 332.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'nexttoolbutton'
     end
@@ -52,7 +50,7 @@ object Form1: TForm1
     Align = Client
     FullSize = True
     Size.Width = 380.000000000000000000
-    Size.Height = 472.000000000000000000
+    Size.Height = 464.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
     TabIndex = 2
@@ -61,11 +59,11 @@ object Form1: TForm1
     OnChange = TabControl1Change
     Sizes = (
       380s
-      472s
+      464s
       380s
-      472s
+      464s
       380s
-      472s)
+      464s)
     object tab1: TTabItem
       CustomIcon = <
         item
@@ -86,7 +84,7 @@ object Form1: TForm1
         FooterAppearanceClassName = 'TListHeaderObjects'
         Align = Client
         Size.Width = 380.000000000000000000
-        Size.Height = 472.000000000000000000
+        Size.Height = 464.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 0
         ItemAppearanceObjects.ItemObjects.Text.WordWrap = True
@@ -114,6 +112,167 @@ object Form1: TForm1
       Text = 'Caption Tab Item #2'
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
+      object pnl2: TPanel
+        Align = Client
+        Size.Width = 380.000000000000000000
+        Size.Height = 464.000000000000000000
+        Size.PlatformDefault = False
+        TabOrder = 0
+        object grpOpe: TGroupBox
+          Align = Top
+          Position.Y = 73.000000000000000000
+          Size.Width = 380.000000000000000000
+          Size.Height = 136.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Opera'#231#227'o'
+          TabOrder = 0
+          object cbb1: TComboBox
+            Items.Strings = (
+              'ENCCEJA'
+              'ENCCEJA PPL'
+              'BNI'
+              'ENEM'
+              'ENADE'
+              'ENEM PPL')
+            ItemIndex = 0
+            Position.X = 192.000000000000000000
+            Position.Y = 32.000000000000000000
+            Size.Width = 177.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            StyleLookup = 'comboboxstyle'
+            TabOrder = 0
+          end
+          object lbl1: TLabel
+            AutoSize = True
+            StyledSettings = [Family, Size, FontColor]
+            Position.X = 24.000000000000000000
+            Position.Y = 36.000000000000000000
+            Size.Width = 113.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Nome da opera'#231#227'o:'
+            TabOrder = 1
+          end
+          object lbl5: TLabel
+            AutoSize = True
+            StyledSettings = [Family, Size, FontColor]
+            Position.X = 24.000000000000000000
+            Position.Y = 66.000000000000000000
+            Size.Width = 105.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Superintend'#234'ncia'
+            TabOrder = 2
+          end
+          object cbb2: TComboBox
+            Items.Strings = (
+              'ACR'
+              'AL'
+              'AM'
+              'AP'
+              'BA'
+              'BSB'
+              'CE'
+              'ES'
+              'GO'
+              'MA'
+              'MG'
+              'MS'
+              'MT'
+              'PA'
+              'PB'
+              'PE'
+              'PI'
+              'PR'
+              'RJ'
+              'RN'
+              'RO'
+              'RR'
+              'RS'
+              'SC'
+              'SE'
+              'SPI'
+              'SPM'
+              'TO')
+            ItemIndex = 0
+            Position.X = 192.000000000000000000
+            Position.Y = 64.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 3
+          end
+          object lbl6: TLabel
+            AutoSize = True
+            StyledSettings = [Family, Size, FontColor]
+            Position.X = 24.000000000000000000
+            Position.Y = 96.000000000000000000
+            Size.Width = 145.000000000000000000
+            Size.Height = 44.000000000000000000
+            Size.PlatformDefault = False
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+            Text = 'Codigo da centralizadora'
+            TabOrder = 4
+          end
+          object cbb3: TComboBox
+            Items.Strings = (
+              '01_PE_CRU'
+              '01_PE_GRS'
+              '01_PE_PNZ'
+              '01_PE_RCE'
+              '01_PE_SGP')
+            ItemIndex = 0
+            Position.X = 192.000000000000000000
+            Position.Y = 96.000000000000000000
+            Size.Width = 89.000000000000000000
+            Size.Height = 32.000000000000000000
+            Size.PlatformDefault = False
+            TabOrder = 5
+          end
+        end
+        object grpGPS: TGroupBox
+          Align = Top
+          Size.Width = 380.000000000000000000
+          Size.Height = 73.000000000000000000
+          Size.PlatformDefault = False
+          Text = 'Precis'#227'o do GPS'
+          TabOrder = 1
+          object btnMin: TSpeedButton
+            StaysPressed = True
+            GroupName = 'gpsDistance'
+            StyledSettings = [Family, Size, FontColor]
+            Position.X = 15.000000000000000000
+            Position.Y = 32.000000000000000000
+            StyleLookup = 'buttonstyle'
+            Text = 'MIN'
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          object btnMed: TSpeedButton
+            StaysPressed = True
+            GroupName = 'gpsDistance'
+            StyledSettings = [Family, Size, FontColor]
+            IsPressed = True
+            Position.X = 150.000000000000000000
+            Position.Y = 32.000000000000000000
+            StyleLookup = 'buttonstyle'
+            Text = 'MED'
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+          object btnMax: TSpeedButton
+            StaysPressed = True
+            GroupName = 'gpsDistance'
+            StyledSettings = [Family, Size, FontColor]
+            Position.X = 285.000000000000000000
+            Position.Y = 32.000000000000000000
+            StyleLookup = 'buttonstyle'
+            Text = 'MAX'
+            TextSettings.Font.StyleExt = {00070000000000000004000000}
+          end
+        end
+      end
     end
     object tab3: TTabItem
       CustomIcon = <
@@ -138,8 +297,9 @@ object Form1: TForm1
           Align = Top
           AutoSize = True
           StyledSettings = [Family, FontColor]
+          Locked = True
           Size.Width = 380.000000000000000000
-          Size.Height = 38.000000000000000000
+          Size.Height = 17.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.Size = 14.000000000000000000
           TextSettings.Font.StyleExt = {00070000000000000004000000}
@@ -154,7 +314,7 @@ object Form1: TForm1
           Position.X = 8.000000000000000000
           Position.Y = 40.000000000000000000
           Size.Width = 137.000000000000000000
-          Size.Height = 16.000000000000000000
+          Size.Height = 22.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           Text = 'Respons'#225'vel:'
@@ -167,7 +327,7 @@ object Form1: TForm1
           Position.X = 8.000000000000000000
           Position.Y = 60.000000000000000000
           Size.Width = 137.000000000000000000
-          Size.Height = 16.000000000000000000
+          Size.Height = 22.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           Text = 'Telefone:'
@@ -180,30 +340,38 @@ object Form1: TForm1
           Position.X = 8.000000000000000000
           Position.Y = 80.000000000000000000
           Size.Width = 137.000000000000000000
-          Size.Height = 16.000000000000000000
+          Size.Height = 44.000000000000000000
           Size.PlatformDefault = False
           TextSettings.Font.StyleExt = {00070000000000000004000000}
           Text = 'Quantidade de malotes:'
           TabOrder = 3
         end
         object lblResp: TLabel
-          Locked = True
           Position.X = 150.000000000000000000
           Position.Y = 40.000000000000000000
+          Size.Width = 211.000000000000000000
+          Size.Height = 23.000000000000000000
+          Size.PlatformDefault = False
           Text = 'Raoni Miranda Neves'
           TabOrder = 4
         end
         object lblFone: TLabel
-          Locked = True
+          AutoSize = True
           Position.X = 150.000000000000000000
           Position.Y = 60.000000000000000000
+          Size.Width = 211.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
           Text = '(81) 99646-1711'
           TabOrder = 5
         end
         object lblQtd: TLabel
-          Locked = True
+          AutoSize = True
           Position.X = 150.000000000000000000
           Position.Y = 80.000000000000000000
+          Size.Width = 211.000000000000000000
+          Size.Height = 22.000000000000000000
+          Size.PlatformDefault = False
           Text = '12'
           TabOrder = 6
         end
@@ -216,11 +384,11 @@ object Form1: TForm1
         Align = Bottom
         Position.Y = 104.000000000000000000
         Size.Width = 380.000000000000000000
-        Size.Height = 368.000000000000000000
+        Size.Height = 360.000000000000000000
         Size.PlatformDefault = False
         TabOrder = 1
         ItemAppearance.ItemHeight = 20
-        ItemAppearanceObjects.ItemObjects.Text.Font.Size = 15.000000000000000000
+        ItemAppearanceObjects.ItemObjects.Text.Font.Size = 18.000000000000000000
         ItemAppearanceObjects.ItemObjects.Text.TextAlign = Center
         ItemAppearanceObjects.ItemObjects.Text.Width = 306.000000000000000000
         ItemAppearanceObjects.ItemObjects.Text.Height = 25.000000000000000000
@@ -238,26 +406,48 @@ object Form1: TForm1
   object BottomToolBar: TToolBar
     Align = Bottom
     Anchors = [akLeft]
-    Position.Y = 516.000000000000000000
+    Position.Y = 512.000000000000000000
     Size.Width = 380.000000000000000000
-    Size.Height = 44.000000000000000000
+    Size.Height = 48.000000000000000000
     Size.PlatformDefault = False
     StyleLookup = 'bottomtoolbar'
     TabOrder = 2
     object btn1: TSpeedButton
       Position.X = 160.000000000000000000
       Position.Y = 8.000000000000000000
-      Size.Width = 73.000000000000000000
-      Size.Height = 22.000000000000000000
+      Size.Width = 48.000000000000000000
+      Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
       StyleLookup = 'refreshtoolbutton'
       Text = 'btn1'
       OnClick = btn1Click
     end
   end
-  object ActionList1: TActionList
-    Left = 304
-    Top = 208
+  object con1: TFDConnection
+    Params.Strings = (
+      'Database=D:\Delphi\ACon\BD_remoto.db'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 344
+    Top = 316
+  end
+  object fdsqlite1: TFDPhysSQLiteDriverLink
+    Left = 344
+    Top = 412
+  end
+  object fdwait1: TFDGUIxWaitCursor
+    Provider = 'FMX'
+    Left = 344
+    Top = 460
+  end
+  object fdqry1: TFDQuery
+    Connection = con1
+    Left = 344
+    Top = 364
+  end
+  object actlst1: TActionList
+    Left = 336
+    Top = 264
     object TitleAction: TControlAction
       Category = 'Tab'
       Text = 'TitleAction'
@@ -272,27 +462,5 @@ object Form1: TForm1
       Category = 'Tab'
       TabControl = TabControl1
     end
-  end
-  object con1: TFDConnection
-    Params.Strings = (
-      'Database=D:\Delphi\ACon\BD_remoto.db'
-      'DriverID=SQLite')
-    LoginPrompt = False
-    Left = 344
-    Top = 316
-  end
-  object fdsqlite1: TFDPhysSQLiteDriverLink
-    Left = 344
-    Top = 420
-  end
-  object fdwait1: TFDGUIxWaitCursor
-    Provider = 'FMX'
-    Left = 344
-    Top = 476
-  end
-  object fdqry1: TFDQuery
-    Connection = con1
-    Left = 344
-    Top = 372
   end
 end

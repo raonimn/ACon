@@ -11,14 +11,11 @@ uses
   FireDAC.Phys.Intf, FireDAC.Stan.Def, FireDAC.Stan.Pool, FireDAC.Stan.Async,
   FireDAC.Phys, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
   FireDAC.FMXUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
-  FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Comp.UI;
+  FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Comp.UI,
+  FMX.ListBox, System.ioutils;
 
 type
   TForm1 = class(TForm)
-    ActionList1: TActionList;
-    PreviousTabAction1: TPreviousTabAction;
-    TitleAction: TControlAction;
-    NextTabAction1: TNextTabAction;
     TopToolBar: TToolBar;
     btnBack: TSpeedButton;
     ToolBarLabel: TLabel;
@@ -43,12 +40,29 @@ type
     lblResp: TLabel;
     lblFone: TLabel;
     lblQtd: TLabel;
+    pnl2: TPanel;
+    grpGPS: TGroupBox;
+    grpOpe: TGroupBox;
+    btnMin: TSpeedButton;
+    btnMed: TSpeedButton;
+    btnMax: TSpeedButton;
+    actlst1: TActionList;
+    TitleAction: TControlAction;
+    PreviousTabAction1: TPreviousTabAction;
+    NextTabAction1: TNextTabAction;
+    cbb1: TComboBox;
+    lbl1: TLabel;
+    lbl5: TLabel;
+    cbb2: TComboBox;
+    lbl6: TLabel;
+    cbb3: TComboBox;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
     procedure btn1Click(Sender: TObject);
     procedure lv1ItemClickEx(const Sender: TObject; ItemIndex: Integer; const LocalClickPos: TPointF; const ItemObject: TListItemDrawable);
     procedure TabControl1Change(Sender: TObject);
+    procedure con1BeforeConnect(Sender: TObject);
   private
     { Private declarations }
   public
@@ -62,7 +76,6 @@ implementation
 
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
-{$R *.iPhone4in.fmx IOS}
 
 procedure TForm1.TabControl1Change(Sender: TObject);
 var
@@ -145,7 +158,7 @@ begin
     con1.Connected := true;
     if con1.Connected then
     try
-      fdqry1.SQL.Text := 'select Cidade from Geo_busca where Centralizadora = ' + quotedstr('01_PE_RCE') + ' GROUP BY Cidade order by Cidade;';
+      fdqry1.SQL.Text := 'SELECT Cidade FROM Geo_busca WHERE Centralizadora = ' + quotedstr('01_PE_RCE') + ' GROUP BY Cidade order by Cidade;';
       fdqry1.Active := True;
       if fdqry1.RecordCount > 0 then
       begin
@@ -161,12 +174,13 @@ begin
         { Tratar caso não retorne cidade (?) }
       end;
       fdqry1.Active := False;
+      lv1.Items.Clear;
       for I := 0 to Cidades.Count - 1 do
       begin
         Item := lv1.Items.Add;
         Item.Text := Cidades[I];
         Item.Purpose := TListItemPurpose.Header;
-        fdqry1.SQL.Text := 'SELECT Destinatario, Bairro from Geo_Busca where Centralizadora = ' + quotedstr('01_PE_RCE') + ' AND Cidade = ' + quotedstr(Cidades[I]) + ' ORDER BY Bairro';
+        fdqry1.SQL.Text := 'SELECT Destinatario, Bairro from Geo_Busca WHERE Centralizadora = ' + quotedstr('01_PE_RCE') + ' AND Cidade = ' + quotedstr(Cidades[I]) + ' ORDER BY Bairro';
         fdqry1.Active := True;
         if fdqry1.RecordCount > 0 then
         begin
@@ -181,7 +195,7 @@ begin
         end
         else
         begin
-        { Tratar caso não retorne cidade (?) }
+        { Tratar caso não retorne as escolas (?) }
         end;
       end;
     finally
@@ -195,12 +209,27 @@ begin
 
 end;
 
+procedure TForm1.con1BeforeConnect(Sender: TObject);
+begin
+  {$IFDEF ANDROID}
+  con1.Params.Values['Database'] := TPath.GetDocumentsPath + PathDelim + 'BD_remoto.db';
+  {$ENDIF}
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 var
   Item: TListViewItem;
 begin
   { This defines the default active tab at runtime }
   TabControl1.First(TTabTransition.None);
+  try
+    con1.Connected := true;
+    if con1.connected then
+      fdqry1.ExecSQL;
+  finally
+    fdqry1.SQL.Clear;
+    con1.Connected := false;
+  end;
 end;
 
 procedure TForm1.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
