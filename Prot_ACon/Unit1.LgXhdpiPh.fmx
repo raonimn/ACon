@@ -15,7 +15,7 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
   inherited TabControl1: TTabControl
     Size.Width = 450.000000000000000000
     Size.Height = 599.000000000000000000
-    TabIndex = 0
+    TabIndex = 1
     Sizes = (
       450s
       599s
@@ -24,7 +24,6 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
       450s
       599s)
     inherited tab1: TTabItem
-      IsSelected = True
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited lv1: TListView
@@ -37,6 +36,7 @@ inherited Form1_LgXhdpiPh: TForm1_LgXhdpiPh
       end
     end
     inherited tab2: TTabItem
+      IsSelected = True
       ExplicitSize.cx = 8.000000000000000000
       ExplicitSize.cy = 8.000000000000000000
       inherited pnl2: TPanel

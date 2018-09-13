@@ -94,9 +94,6 @@ begin
       begin
         ToolBarLabel.Text := 'ACon - Detalhes';
         item := lvDet.Items.Add;
-        item.Text := 'MALOTES';
-        item.Purpose := TListItemPurpose.Header;
-        item := lvDet.Items.Add;
         item.Text := 'IP123456785BR';
         item := lvDet.Items.Add;
         item.Text := 'IP123456785BR';
