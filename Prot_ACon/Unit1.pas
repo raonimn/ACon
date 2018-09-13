@@ -12,7 +12,9 @@ uses
   FireDAC.Phys, FireDAC.Phys.SQLite, FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs,
   FireDAC.FMXUI.Wait, FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf,
   FireDAC.DApt, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client, FireDAC.Comp.UI,
-  FMX.ListBox, System.ioutils;
+  FMX.ListBox, System.ioutils, IPPeerClient, REST.Backend.ServiceTypes, REST.Backend.MetaTypes,
+  System.JSON, REST.Backend.KinveyServices, REST.Backend.Providers, REST.Backend.ServiceComponents,
+  REST.Backend.KinveyProvider;
 
 type
   TForm1 = class(TForm)
@@ -56,6 +58,8 @@ type
     cbb2: TComboBox;
     lbl6: TLabel;
     cbb3: TComboBox;
+    KinveyProvider1: TKinveyProvider;
+    BackendStorage1: TBackendStorage;
     procedure FormCreate(Sender: TObject);
     procedure TitleActionUpdate(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);
@@ -63,7 +67,9 @@ type
     procedure lv1ItemClickEx(const Sender: TObject; ItemIndex: Integer; const LocalClickPos: TPointF; const ItemObject: TListItemDrawable);
     procedure TabControl1Change(Sender: TObject);
     procedure con1BeforeConnect(Sender: TObject);
+    procedure cbb2Change(Sender: TObject);
   private
+    procedure FillCent;
     { Private declarations }
   public
     { Public declarations }
@@ -149,13 +155,15 @@ var
   Cidades: TStringList;
   I: Integer;
   Item: TListViewItem;
+  aCentr: string;
 begin
+  aCentr := cbb3.Items[cbb3.ItemIndex];
   Cidades := TStringList.Create;
   try
     con1.Connected := true;
     if con1.Connected then
     try
-      fdqry1.SQL.Text := 'SELECT Cidade FROM Geo_busca WHERE Centralizadora = ' + quotedstr('01_PE_RCE') + ' GROUP BY Cidade order by Cidade;';
+      fdqry1.SQL.Text := 'SELECT Cidade FROM Geo_busca WHERE Centralizadora = ' + quotedstr(aCentr) + ' GROUP BY Cidade order by Cidade;';
       fdqry1.Active := True;
       if fdqry1.RecordCount > 0 then
       begin
@@ -177,7 +185,7 @@ begin
         Item := lv1.Items.Add;
         Item.Text := Cidades[I];
         Item.Purpose := TListItemPurpose.Header;
-        fdqry1.SQL.Text := 'SELECT Destinatario, Bairro from Geo_Busca WHERE Centralizadora = ' + quotedstr('01_PE_RCE') + ' AND Cidade = ' + quotedstr(Cidades[I]) + ' ORDER BY Bairro';
+        fdqry1.SQL.Text := 'SELECT Destinatario, Bairro from Geo_Busca WHERE Centralizadora = ' + quotedstr(aCentr) + ' AND Cidade = ' + quotedstr(Cidades[I]) + ' ORDER BY Bairro';
         fdqry1.Active := True;
         if fdqry1.RecordCount > 0 then
         begin
@@ -206,11 +214,62 @@ begin
 
 end;
 
+procedure TForm1.cbb2Change(Sender: TObject);
+{var
+ LJSONArray: TJSONArray;
+  LItem: TListViewItem;
+  I: Integer;
+  LQuery: string;
+
+ }
+begin
+  FillCent;
+//  LQuery := Format('query={"SE":"%s"}', [cbb2.Items[cbb2.ItemIndex]]);
+{  LJSONArray := TJSONArray.Create;
+  try
+    BackendStorage1.Storage.QueryObjects('GeoData', [LQuery], LJSONArray);
+    lv1.Items.Clear;
+    for I := 0 to LJSONArray.Count - 1 do
+    begin
+      LItem := lv1.Items.Add;
+      LItem.Text := (LJSONArray.Items[I].GetValue < string > ('DESTINATARIO'));
+    end;
+  finally
+    LJSONArray.Free;
+  end;
+
+}
+end;
+
 procedure TForm1.con1BeforeConnect(Sender: TObject);
 begin
   {$IFDEF ANDROID}
   con1.Params.Values['Database'] := TPath.GetDocumentsPath + PathDelim + 'BD_remoto.db';
   {$ENDIF}
+end;
+
+procedure TForm1.FillCent;
+var
+  LJSONArray: TJSONArray;
+  LItem: TListViewItem;
+  I: Integer;
+  LQuery: string;
+begin
+
+  LQuery := Format('query={"SE":"%s"}', [cbb2.Items[cbb2.ItemIndex]]);
+  LJSONArray := TJSONArray.Create;
+  try
+    BackendStorage1.Storage.QueryObjects('CentData', [LQuery], LJSONArray);
+    cbb3.Items.Clear;
+    for I := 0 to LJSONArray.Count - 1 do
+    begin
+      cbb3.Items.Add(LJSONArray.Items[I].GetValue < string > ('CENTRALIZADORA'));
+    end;
+  finally
+    LJSONArray.Free;
+  end;
+  if cbb3.Items.Count > 0 then
+    cbb3.ItemIndex := 0;
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);
@@ -227,6 +286,7 @@ begin
     fdqry1.SQL.Clear;
     con1.Connected := false;
   end;
+
 end;
 
 procedure TForm1.FormKeyUp(Sender: TObject; var Key: Word; var KeyChar: Char; Shift: TShiftState);

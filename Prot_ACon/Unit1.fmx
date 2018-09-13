@@ -53,7 +53,7 @@ object Form1: TForm1
     Size.Height = 464.000000000000000000
     Size.PlatformDefault = False
     TabHeight = 49.000000000000000000
-    TabIndex = 2
+    TabIndex = 1
     TabOrder = 1
     TabPosition = None
     OnChange = TabControl1Change
@@ -103,7 +103,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = False
+      IsSelected = True
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -204,6 +204,7 @@ object Form1: TForm1
             Size.Height = 32.000000000000000000
             Size.PlatformDefault = False
             TabOrder = 3
+            OnChange = cbb2Change
           end
           object lbl6: TLabel
             AutoSize = True
@@ -278,7 +279,7 @@ object Form1: TForm1
       CustomIcon = <
         item
         end>
-      IsSelected = True
+      IsSelected = False
       Size.Width = 8.000000000000000000
       Size.Height = 8.000000000000000000
       Size.PlatformDefault = False
@@ -413,8 +414,7 @@ object Form1: TForm1
     StyleLookup = 'bottomtoolbar'
     TabOrder = 2
     object btn1: TSpeedButton
-      Position.X = 160.000000000000000000
-      Position.Y = 8.000000000000000000
+      Align = Center
       Size.Width = 48.000000000000000000
       Size.Height = 48.000000000000000000
       Size.PlatformDefault = False
@@ -442,6 +442,64 @@ object Form1: TForm1
   end
   object fdqry1: TFDQuery
     Connection = con1
+    SQL.Strings = (
+      ''
+      'CREATE TABLE IF NOT EXISTS "ENCCEJA_2018" ('
+      '  "Objeto" TEXT,'
+      '  "Data/Hora de postagem" TEXT,'
+      '  "Data Prevista" TEXT,'
+      '  "Data de Entrega" TEXT,'
+      '  "Objeto de retorno/ida" TEXT,'
+      '  "C'#243'd. Destinat'#225'rio" TEXT,'
+      '  "Destinat'#225'rio" TEXT,'
+      '  "Logradouro" TEXT,'
+      '  "Bairro" TEXT,'
+      '  "CEP" TEXT,'
+      '  "C'#243'd. Cidade" TEXT,'
+      '  "Cidade" TEXT,'
+      '  "UF" TEXT,'
+      '  "'#218'ltimo Status" TEXT,'
+      '  "SE" TEXT,'
+      '  "C'#243'd. Centralizadora" TEXT,'
+      '  "C'#243'd. Distribuidora" TEXT,'
+      '  "Distribuidora" TEXT,'
+      '  "Mala Postal" TEXT,'
+      '  "Tipo do unitizador" TEXT,'
+      '  "Sabadista (S/N)" TEXT,'
+      '  "Prova Especial (S/N)" TEXT,'
+      '  "Peso (em kg)" TEXT,'
+      '  "N'#250'm. unitizador previsto" TEXT,'
+      '  "Qtd. inscritos" TEXT,'
+      '  "Qtd. provas" TEXT,'
+      '  "Qtd. provas especiais" TEXT,'
+      '  "Lacre 1" TEXT,'
+      '  "Lacre 2" TEXT,'
+      '  "Organizadora" TEXT,'
+      '  "Arquivo" TEXT,'
+      '  "Data/Hora envio arq p/ grafica" TEXT'
+      ');'
+      ''
+      'CREATE TABLE IF NOT EXISTS "Geo_busca" ('
+      '  "GEO_ID" INTEGER(255) NOT NULL,'
+      '  "Destinatario" TEXT(100),'
+      '  "Centralizadora" TEXT(10),'
+      '  "Bairro" TEXT(100),'
+      '  "Cidade" TEXT(100),'
+      '  "SE" TEXT(3),'
+      '  "UF" TEXT(3),'
+      '  "Pesquisa" TEXT(140),'
+      '  "Latitude" TEXT(30),'
+      '  "Longitude" TEXT(30),'
+      '  PRIMARY KEY ("GEO_ID")'
+      ');'
+      ''
+      'CREATE TABLE IF NOT EXISTS "Objetos" ('
+      '  "Objeto" TEXT(13) NOT NULL,'
+      '  "Data" TEXT(10),'
+      '  "GEO_ID" INTEGER(255),'
+      '  PRIMARY KEY ("Objeto")'
+      ');'
+      '')
     Left = 344
     Top = 364
   end
@@ -462,5 +520,18 @@ object Form1: TForm1
       Category = 'Tab'
       TabControl = TabControl1
     end
+  end
+  object KinveyProvider1: TKinveyProvider
+    ApiVersion = '3'
+    AppKey = 'kid_r1j3VcHuQ'
+    AppSecret = '4576a5904e954742a57400246e0f5228'
+    MasterSecret = '8471179e97384340ab0e2c980c3200f1'
+    Left = 64
+    Top = 352
+  end
+  object BackendStorage1: TBackendStorage
+    Provider = KinveyProvider1
+    Left = 184
+    Top = 344
   end
 end
